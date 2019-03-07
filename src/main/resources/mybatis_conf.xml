@@ -9,6 +9,7 @@
     <!--设置对象别名，将来给 mapper 简化包路径熟悉呢-->
     <typeAliases>
         <typeAlias alias="User" type="com.mybatis.cn.base_mybatis_crud.domain.User"/>
+        <typeAlias alias="proxyUser" type="com.mybatis.cn.base_mapperproxy.domain.User"/>
     </typeAliases>
 
     <environments default="mysql">
@@ -27,5 +28,6 @@
 
     <mappers>
         <mapper resource="com/mybatis/cn/base_mybatis_crud/mapper/UserMapper.xml"/>
+        <mapper resource="com/mybatis/cn/base_mapperproxy/mapper/UserMapper.xml"/>
     </mappers>
 </configuration>

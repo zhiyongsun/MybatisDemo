@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--name space 中填写 mapper 的包路径-->
+<mapper namespace="com.mybatis.cn.base_mapperproxy.proxy.UserDao">
+    <!--所有增删改的 标签 id 值和代理接口的方法保持一致-->
+    <!--所有增删改 的mapper标签的 parameterType 和代理接口方法的参数类型一致-->
+    <insert id="save" parameterType="proxyUser">
+      INSERT INTO springuser values (null,#{account},#{pwd},#{name})
+    </insert>
+    <delete id="remove" parameterType="int">
+      DELETE FROM springuser WHERE id =#{value}
+    </delete>
+    <update id="modify" parameterType="proxyUser">
+      UPDATE springuser SET account=#{account},name=#{name} WHERE id=#{id}
+    </update>
+</mapper>
