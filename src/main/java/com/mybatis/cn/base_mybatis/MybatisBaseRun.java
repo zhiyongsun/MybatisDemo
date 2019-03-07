@@ -30,7 +30,6 @@ public class MybatisBaseRun {
             // 插入数据
             sqlSession.insert("com.mybatis.cn.base_mybatis.mapper.UserMapper.saveUser",user);
             sqlSession.commit();
-
         } catch (IOException e) {
             e.printStackTrace();
         }
