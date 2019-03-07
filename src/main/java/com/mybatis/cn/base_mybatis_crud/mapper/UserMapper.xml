@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--name space 中填写 mapper 的包路径-->
+<mapper namespace="com.mybatis.cn.base_mybatis_crud.mapper.UserMapper">
+    <!--插入标签 不用写分号-->
+    <insert id="saveUser" parameterType="User">
+        INSERT INTO springuser VALUES (null,#{account},#{pwd},#{name})
+    </insert>
+
+    <!--删除,单个参数取值，直接用 value-->
+    <delete id="deleteUser" parameterType="int">
+        DELETE FROM springuser WHERE id=#{value}
+    </delete>
+
+    <!--更新操作-->
+    <update id="updateUser" parameterType="User">
+        UPDATE springuser SET account=#{account}, pwd=#{pwd} WHERE id=#{id}
+    </update>
+</mapper>
