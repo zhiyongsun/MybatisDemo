@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--name space 中填写 mapper 的包路径-->
+<mapper namespace="com.mybatis.cn.base_mapperproxy.proxy.StuClassDao">
+
+    <!--如果涉及到复杂结果，需要设置 resultType 改为 resultMap-->
+    <select id="getStuAndClass" resultMap="getStudentAndClass">
+        SELECT * FROM student WHERE id=#{id}
+    </select>
+
+    <resultMap id="getStudentAndClass" type="com.mybatis.cn.base_mapperproxy.domain.Student">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="stunum" column="stunum"/>
+        <result property="classnum" column="classnum"/>
+        <association property="claz" column="id"
+                     javaType="com.mybatis.cn.base_mapperproxy.domain.Claz"
+                     select="selectClazzById"/>
+        />
+    </resultMap>
+    <select id="selectClazzById" resultType="com.mybatis.cn.base_mapperproxy.domain.Claz">
+        SELECT * FROM class WHERE id=#{id}
+    </select>
+</mapper>
