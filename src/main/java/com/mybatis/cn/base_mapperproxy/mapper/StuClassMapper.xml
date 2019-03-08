@@ -24,4 +24,22 @@
     <select id="selectClazzById" resultType="com.mybatis.cn.base_mapperproxy.domain.Claz">
         SELECT * FROM class WHERE id=#{id}
     </select>
+
+    <!--查询班级及其学生-->
+    <select id="getClazAndStu" resultMap="clazzandstu">
+        SELECT * FROM class
+    </select>
+    <resultMap id="clazzandstu" type="com.mybatis.cn.base_mapperproxy.domain.Claz">
+        <id property="id" column="id"/>
+        <result property="classname" column="classname"/>
+        <collection property="stuList"
+                    javaType="ArrayList"
+                    column="id"
+                    ofType="com.mybatis.cn.base_mapperproxy.domain.Student" select="selectstubyid"/>
+
+    </resultMap>
+
+    <select id="selectstubyid" resultMap="com.mybatis.cn.base_mapperproxy.domain.Student">
+        SELECT * FROM student WHERE id=#{id}
+    </select>
 </mapper>
