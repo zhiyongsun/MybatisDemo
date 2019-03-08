@@ -8,7 +8,7 @@ public class DeleteRun {
     public static void main(String[] args) {
         SqlSession session = MySqlSessionFactory.getSqlSession();
         UserDao ud = session.getMapper(UserDao.class);
-        ud.remove(13);
+        ud.remove(11);
         session.commit();
     }
 }

@@ -4,7 +4,7 @@
 
 <!--name space 中填写 mapper 的包路径-->
 <mapper namespace="com.mybatis.cn.base_dql_query.proxy.UserDao">
-    <select id="selectUser" parameterType="int">
+    <select id="selectUser" parameterType="int" resultType="User">
         SELECT id  FROM springuser WHERE id=#{value}
     </select>
 </mapper>

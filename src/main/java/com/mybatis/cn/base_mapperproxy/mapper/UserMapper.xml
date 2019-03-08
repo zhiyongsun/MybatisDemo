@@ -15,4 +15,12 @@
     <update id="modify" parameterType="proxyUser">
       UPDATE springuser SET account=#{account},name=#{name} WHERE id=#{id}
     </update>
+
+    <select id="selectUser" parameterType="int" resultType="proxyUser">
+        SELECT id  FROM springuser WHERE id=#{value}
+    </select>
+
+    <select id="selectMultpleUser" resultType="proxyUser">
+        SELECT * FROM springuser
+    </select>
 </mapper>
