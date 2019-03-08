@@ -10,6 +10,7 @@
     <typeAliases>
         <typeAlias alias="User" type="com.mybatis.cn.base_mybatis_crud.domain.User"/>
         <typeAlias alias="proxyUser" type="com.mybatis.cn.base_mapperproxy.domain.User"/>
+        <typeAlias alias="Student" type="com.mybatis.cn.base_mapperproxy.domain.Student"/>
     </typeAliases>
 
     <environments default="mysql">
@@ -29,5 +30,6 @@
     <mappers>
         <mapper resource="com/mybatis/cn/base_mybatis_crud/mapper/UserMapper.xml"/>
         <mapper resource="com/mybatis/cn/base_mapperproxy/mapper/UserMapper.xml"/>
+        <mapper resource="com/mybatis/cn/base_mapperproxy/mapper/StuClassMapper.xml"/>
     </mappers>
 </configuration>

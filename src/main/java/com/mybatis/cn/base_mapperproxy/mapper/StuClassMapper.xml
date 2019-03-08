@@ -20,6 +20,7 @@
                      select="selectClazzById"/>
         />
     </resultMap>
+
     <select id="selectClazzById" resultType="com.mybatis.cn.base_mapperproxy.domain.Claz">
         SELECT * FROM class WHERE id=#{id}
     </select>
